@@ -5,10 +5,6 @@ import UserProfile from '../components/UserProfile';
 import Card from '../components/Card';
 import CardSuggest from '../components/CardSuggest';
 
-// ParamList를 정의하여 사용할 수도 있습니다.
-type ParamList = {
-  CardDetails: undefined; // 예시로 CardDetails 스크린이 있다고 가정
-};
 
 type HomeScreenProps = {
   navigation: NavigationProp<ParamListBase>;

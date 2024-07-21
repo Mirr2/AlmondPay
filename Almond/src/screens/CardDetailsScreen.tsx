@@ -22,7 +22,7 @@ const CardDetailsScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>내 카드 정보</Text>
+      <Text style={styles.text}>내 카드 내역</Text>
       <View style={styles.imageContainer}>
         <ScrollView
           horizontal
