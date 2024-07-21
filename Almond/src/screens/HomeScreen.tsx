@@ -2,8 +2,8 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { NavigationProp, ParamListBase } from '@react-navigation/native';
 import UserProfile from '../components/UserProfile';
-import MenuIcon from '../components/MenuIcon';
 import Card from '../components/Card';
+import CardSuggest from '../components/CardSuggest';
 
 // ParamList를 정의하여 사용할 수도 있습니다.
 type ParamList = {
@@ -20,6 +20,8 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
       <UserProfile />
       <View style={styles.separator} />
       <Card navigation={navigation} />
+      <View style={styles.separator} />
+      <CardSuggest navigation={navigation} />
       <View style={styles.separator} />
     </View>
   );
