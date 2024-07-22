@@ -6,11 +6,11 @@ import Card from '../components/Card';
 import CardSuggest from '../components/CardSuggest';
 
 
-type HomeScreenProps = {
+type MenuScreenProps = {
   navigation: NavigationProp<ParamListBase>;
 };
 
-const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
+const MenuScreen: React.FC<MenuScreenProps> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <UserProfile />
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default HomeScreen;
+export default MenuScreen;

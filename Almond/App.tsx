@@ -5,12 +5,25 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // 스크린 컴포넌트를 임포트합니다.
-import HomeScreen from './src/screens/HomeScreen';
+import MenuScreen from './src/screens/MenuScreen';
 import CardDetailsScreen from './src/screens/CardDetailsScreen';
 import SuggestDetailsScreen from './src/screens/SuggestDetailsScreen';
 
-
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+// 메인 탭 네비게이터 생성
+function MainTabNavigator() {
+  return (
+    <Tab.Navigator
+      initialRouteName="내 카드" // '내 카드' 화면을 시작 화면으로 설정
+    >
+      <Tab.Screen name="메뉴" component={MenuScreen} options={{ tabBarLabel: '메뉴' }} />
+      <Tab.Screen name="내 카드" component={CardDetailsScreen} options={{ tabBarLabel: '결제' }} />
+      <Tab.Screen name="카드 추천 서비스" component={SuggestDetailsScreen} options={{ tabBarLabel: '카드 추천' }} />
+    </Tab.Navigator>
+  );
+}
 
 function App() {
   return (
@@ -18,7 +31,7 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen 
           name="Home" 
-          component={HomeScreen}
+          component={MainTabNavigator} // 스택 내에 메인 탭 네비게이터 포함
           options={{
             headerLeft: () => (
               <Image
@@ -27,11 +40,10 @@ function App() {
               />
             ),
             headerTitle: '', // 타이틀을 비워둠
-            headerTitleAlign: 'center'
+            headerTitleAlign: 'center',
+            headerShown: false // 탭 네비게이션 때 헤더 숨기기
           }}
         />
-        <Stack.Screen name="내 카드" component={CardDetailsScreen} />
-        <Stack.Screen name="카드 추천 서비스" component={SuggestDetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
