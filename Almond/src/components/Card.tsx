@@ -8,7 +8,7 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ navigation }) => {
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('내 카드다')}>
+    <TouchableOpacity onPress={() => navigation.navigate('내 카드')}>
       <View style={styles.container}>
         <Text style={styles.text}>내 카드</Text>
       </View>
